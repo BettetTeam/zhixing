@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" charset="UTF-8" src="js/lib/flexible.js"></script>
+    <title>Title</title>
+    <link href="css/base.css" rel="stylesheet">
+    <!-- [if lt IE 9]>
+    <script src="js/lib/html5shiv.min.js"></script>
+    <script src="js/lib/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="grey-bg">
+<!--头部：begin-->
+<nav class="pg-header fixed">
+    <div class="container">
+        <a class="brand pull-left" href="index.html"><img src="images/lib/logo.png" alt=""></a>
+        <a href="#nav-modal" class="menu-btn pull-right" data-toggle="modal"></a>
+        <a href="javascript:void(0);" class="search-btn pull-right"></a>
+    </div>
+</nav>
+<div class="search-fixed">
+    <form onsubmit="return false;">
+        <div class="form-group">
+            <span class="search-btn"></span>
+            <input class="form-control" id="keyword-input" type="search" placeholder="输入你要搜索的内容">
+            <a class="cancel-btn" href="javascript:void(0);">取消</a>
+        </div>
+    </form>
+</div>
+<!--头部撑起-->
+<div class="pad-header"></div>
+<!--头部：end-->
+<!--主题部分：begin-->
+<section class="pg-section mt-em">
+    <div class="container">
+        <div class="hot-tab"><a href="hot.html">爆料事件</a><a class="active"  href="paper.html">投稿内容</a></div>
+        <div class="alert-wrap mt-em">
+            <header>我们希望爆料事件符合以下条件：</header>
+            <article>
+                1、公司的行政方面； 2、业务模式的重大转型，新业务的开辟、关停，新产品的上线、
+                暂停； 3、你认为有价值的其它爆料。
+            </article>
+        </div>
+        <form id="hot-form">
+            <div class="hot-form mt-em">
+                <div class="form-group brand">
+                    <span class="label">投稿邮箱<i>*</i></span>
+                    <div class="form-text">Email：tougao@izxxz.com<input type="hidden"  name="email" value="tougao@izxxz.com"> <div class="checkbox"><input type="checkbox" name="emailcheck"></div></div>
+
+                </div>
+                <div class="form-group brand">
+                    <span class="label">添加文章链接<i>*</i></span>
+                    <input class="form-control" name="txtlink" type="text" placeholder="请添加您的文章连接">
+                </div>
+                <div class="form-header"><span class="mark-tip">*</span>必须填写其中一个才可以投稿</div>
+                <div class="form-group">
+                    <span class="label">您的姓名<i>*</i></span>
+                    <input class="form-control" name="firstName" type="text" placeholder="请输入您的姓名">
+                </div>
+                <div class="form-group">
+                    <span class="label">您的手机号<i>*</i></span>
+                    <input class="form-control" name="phone" type="text" placeholder="只用于知行工作人员联系，我们会为您保密">
+                </div>
+                <div class="form-group">
+                    <span class="label">您的微信号<i>*</i></span>
+                    <input class="form-control" name="wechat" type="text" placeholder="只用于知行工作人员联系，我们会为您保密">
+                </div>
+                <a href="javascript:void(0);" class="btn btn-brand btn-block btn-submit">提交</a>
+            </div>
+        </form>
+    </div>
+</section>
+<!--主题部分：end-->
+<!--fixed wechat:begin-->
+<a class="share-btn fixed"></a>
+<!--fixed wechat:end-->
+<!--搜索模态框：begin-->
+<div class="modal fade search-modal" id="search-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--<form>-->
+            <div class="form-group">
+                <a class="search-btn" href="javascript:void(0);"><i class="iconfont icon-search-light"></i></a>
+                <input class="form-control" type="text">
+                <a class="cancel-btn" href="" data-dismiss="modal">取消</a>
+            </div>
+            <!--</form>-->
+        </div>
+    </div>
+</div>
+<!--搜索模态框：end-->
+<!--导航模态框：begin-->
+<div class="modal fade nav-modal" id="nav-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="logo"><img src="images/lib/whitelogo.png" alt=""></div>
+            <ul class="navbar">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="skill.html">行政秘籍</a></li>
+                <li><a href="talk.html">知行大咖说</a></li>
+                <li><a href="activity.html">活动</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="hot.html">我要爆料</a></li>
+                <li class="active"><a href="paper.html">投稿内容</a></li>
+            </ul>
+            <a href="" class="close-modal" data-dismiss="modal"><i class="iconfont icon-close"></i></a>
+        </div>
+    </div>
+</div>
+<!--导航模态框：end-->
+<!--页尾：begin-->
+<footer class="pg-footer abs">
+    <div class="container">
+        <div class="ft-box clearfix">
+            <div class="ft-other pull-left">
+                <div class="logo"><img src="images/lib/ftlogo.png" alt=""></div>
+                <div class="line"></div>
+                <h2>行政人在此凝聚</h2>
+            </div>
+            <div class="site pull-right">
+                <p>客服邮箱：service@izxxz.com</p>
+                <p>小编微信：xingzhengclub</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="web-info">备案号：京391095819086-1049-016</div>
+    </div>
+</footer>
+<!--页尾撑起-->
+<div class="pad-footer"></div>
+<!--页尾：end-->
+<!--form表单提示框：begin-->
+<div class="modal fade form-modal-tip" id="form-tips-modal" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content text-center">
+            <img src="images/lib/formalert.png" alt="">
+            <p>加 * 为必填</p>
+        </div>
+    </div>
+</div>
+<!--form表单提示框：end-->
+<!--脚本：begin-->
+<script src="js/lib/jquery.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/app/lib.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/app/paper.js" charset="UTF-8" type="text/javascript"></script>
+<!--脚本：end-->
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>Title</title>
+    <link href="css/base.css" rel="stylesheet">
+    <!-- [if lt IE 9]>
+    <script src="js/lib/html5shiv.min.js"></script>
+    <script src="js/lib/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="grey-bg">
+<!--头部：begin-->
+<nav class="pg-header fixed">
+    <div class="container">
+        <!--logo:beign-->
+        <a class="brand pull-left" href="index.html"><img src="images/lib/logo.png" alt=""></a>
+        <!--logo:end-->
+        <!--导航：begin-->
+        <ul class="navbar pull-left">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="skill.html">行政秘籍</a></li>
+            <li><a href="talk.html">知行大咖说</a></li>
+            <li><a href="activity.html">活动</a></li>
+        </ul>
+        <!--导航：end-->
+        <!--搜索：begin-->
+        <div class="searchbar pull-right" id="search-bar">
+            <input type="text" placeholder="搜索">
+            <a href="search.html" class="submit-btn"></a>
+            <a href="javascript:void(0);" class="clear-btn"></a>
+        </div>
+        <!--搜索：end-->
+        <!--爆料：begin-->
+        <div class="hot-link pull-right"><a href="paper.html">投稿</a><a href="hot.html">爆料</a></div>
+        <!--爆料：end-->
+    </div>
+</nav>
+<!--头部撑起-->
+<div class="pad-header"></div>
+<!--头部：end-->
+<!--主题部分：begin-->
+<section class="pg-section">
+    <div class="container">
+        <div class="hot-wrap">
+            <div class="hot-tab"><a class="active" href="hot.html">爆料事件</a><a href="paper.html">投稿内容</a></div>
+            <div class="hot-content">
+                <div class="alert-wrap">
+                    <header>我们希望爆料事件符合以下条件：</header>
+                    <article>
+                        1、公司的行政方面； 2、业务模式的重大转型，新业务的开辟、关停，新产品的上线、
+                        暂停； 3、你认为有价值的其它爆料。
+                    </article>
+                </div>
+                <form id="hot-form">
+                    <div class="hot-form">
+                        <div class="form-group">
+                            <span class="label abs">爆料事件<i>*</i></span>
+                            <textarea class="form-control textarea-hot" name="accident" placeholder="请输入爆料详情（50-200）"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <span class="label abs">您的手机号<i>*</i></span>
+                            <input class="form-control" name="phone" type="text" placeholder="只用于知行工作人员联系，我们会为您保密">
+                        </div>
+                        <div class="form-group">
+                            <span class="label abs">您的微信号<i>*</i></span>
+                            <input class="form-control" name="wechat" type="text" placeholder="只用于知行工作人员联系，我们会为您保密">
+                        </div>
+                        <div class="form-group">
+                            <span class="label abs">您的姓名</span>
+                            <input class="form-control" name="firstName" type="text" placeholder="请输入您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <span class="label abs">公司名称</span>
+                            <input class="form-control" name="company" type="text" placeholder="请输入公司名称">
+                        </div>
+                        <a href="javascript:void(0);" class="btn btn-brand btn-block btn-submit">提交</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!--主题部分：end-->
+<!--fixed wechat:begin-->
+<div class="share-btn fixed"></div>
+<!--fixed wechat:end-->
+<!--form表单提示框：begin-->
+<div class="modal fade form-modal-tip" id="form-tips-modal" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content text-center">
+            <img src="images/lib/formalert.png" alt="">
+            <p>加 * 为必填</p>
+        </div>
+    </div>
+</div>
+<!--form表单提示框：end-->
+<!--页尾：begin-->
+<footer class="pg-footer abs">
+    <div class="container">
+        <div class="ft-box clearfix">
+            <div class="ft-other pull-left">
+                <header><img src="images/lib/ftlogo.png" alt=""><span>行政人在此凝聚</span></header>
+                <div class="site">
+                    <p>客服邮箱：service@izxxz.com</p>
+                    <p>小编微信：xingzhengclub</p>
+                </div>
+            </div>
+            <div class="ft-nav pull-left">
+                <ul>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="about.html">联系我们</a></li>
+                    <li><a href="join.html">加入我们</a></li>
+                </ul>
+            </div>
+            <div class="wechat pull-right">
+                <img src="images/upload/wechat.jpg" alt="">
+                <p>扫码关注<br>“知行club”公众号</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="web-info">备案号：京391095819086-1049-016</div>
+    </div>
+</footer>
+<!--页尾撑起-->
+<div class="pad-footer"></div>
+<!--页尾：end-->
+<!--脚本：begin-->
+<script src="js/lib/jquery.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/lib/lazyLoad.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/app/lib.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/app/hot.js" charset="UTF-8" type="text/javascript"></script>
+<!--脚本：end-->
+</body>
+</html>

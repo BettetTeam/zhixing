@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/webuploader.css">
+    <link href="css/base.css" rel="stylesheet">
+    <!-- [if lt IE 9]>
+    <script src="js/lib/html5shiv.min.js"></script>
+    <script src="js/lib/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="grey-bg">
+<!--头部：begin-->
+<nav class="pg-header fixed">
+    <div class="container">
+        <!--logo:beign-->
+        <a class="brand pull-left" href="index.html"><img src="images/lib/logo.png" alt=""></a>
+        <!--logo:end-->
+        <!--导航：begin-->
+        <ul class="navbar pull-left">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="skill.html">行政秘籍</a></li>
+            <li><a href="talk.html">知行大咖说</a></li>
+            <li><a href="activity.html">活动</a></li>
+        </ul>
+        <!--导航：end-->
+        <!--搜索：begin-->
+        <div class="searchbar pull-right" id="search-bar">
+            <input type="text" placeholder="搜索">
+            <a href="search.html" class="submit-btn"></a>
+            <a href="javascript:void(0);" class="clear-btn"></a>
+        </div>
+        <!--搜索：end-->
+        <!--爆料：begin-->
+        <div class="hot-link pull-right"><a href="paper.html">投稿</a><a href="hot.html">爆料</a></div>
+        <!--爆料：end-->
+    </div>
+</nav>
+<!--头部撑起-->
+<div class="pad-header"></div>
+<!--头部：end-->
+<!--主题部分：begin-->
+<section class="pg-section">
+    <div class="container">
+        <div class="hot-wrap">
+            <div class="hot-tab"><a href="hot.html">爆料事件</a><a class="active" href="paper.html">投稿内容</a></div>
+            <div class="hot-content">
+                <div class="alert-wrap">
+                    <header>我们希望爆料事件符合以下条件：</header>
+                    <article>
+                        1、公司的行政方面； 2、业务模式的重大转型，新业务的开辟、关停，新产品的上线、
+                        暂停； 3、你认为有价值的其它爆料。
+                    </article>
+                </div>
+                <form id="hot-form">
+                    <div class="hot-form">
+                        <div class="form-group brand">
+                            <span class="label abs">投稿上传入口</span>
+                            <div class="form-control file-control"><input type="hidden" name="fileurls" id="fileinput"><a href="#upload-modal" data-toggle="modal"><i class="iconfont icon-shangchuan"></i></a></div>
+                            <ul class="uploaded-files">
+                                <li><span class="name">关于行政的那些事. doc</span> <a href="#filescan-modal" data-addr="test01.pdf" data-toggle="modal" class="scan-btn">预览</a> <a href="" class="delete-btn">删除</a></li>
+                                <li><span class="name">关于行政的那些事. doc</span> <a href="#filescan-modal" data-addr="test02.pdf" data-toggle="modal" class="scan-btn">预览</a> <a href="" class="delete-btn">删除</a></li>
+                                <li><span class="name">关于行政的那些事. doc</span> <a href="#filescan-modal" data-addr="viewer.pdf" data-toggle="modal" class="scan-btn">预览</a> <a href="" class="delete-btn">删除</a></li>
+                                <li><span class="name">关于行政的那些事. doc</span> <a href="#filescan-modal" data-addr="viewer01.pdf" data-toggle="modal" class="scan-btn">预览</a> <a href="" class="delete-btn">删除</a></li>
+                                <li><span class="name">关于行政的那些事. doc</span> <a href="#filescan-modal" data-addr="adc.pdf.viewer.pdf" data-toggle="modal" class="scan-btn">预览</a> <a href="" class="delete-btn">删除</a></li>
+                            </ul>
+                        </div>
+                        <div class="form-group brand">
+                            <span class="label abs">添加文章连接</span>
+                            <input class="form-control" name="newsLink" type="text" placeholder="只用于知行工作人员联系，我们会为您保密">
+                        </div>
+                        <div class="form-header"><span class="mark-tip">*</span>必须填写其中一个才可以投稿</div>
+                        <div class="form-group">
+                            <span class="label abs">您的姓名<i>*</i></span>
+                            <input class="form-control" name="firstName" type="text" placeholder="请输入您的姓名">
+                        </div>
+                        <div class="form-group">
+                            <span class="label abs">您的手机号<i>*</i></span>
+                            <input class="form-control" name="phone" type="text" placeholder="只用于知行工作人员联系，我们会为您保密">
+                        </div>
+                        <div class="form-group">
+                            <span class="label abs">您的微信号<i>*</i></span>
+                            <input class="form-control" name="wechat" type="text" placeholder="只用于知行工作人员联系，我们会为您保密">
+                        </div>
+                        <a href="javascript:void(0);" class="btn btn-brand btn-block btn-submit">提交</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!--主题部分：end-->
+<!--fixed wechat:begin-->
+<div class="share-btn fixed"></div>
+<!--fixed wechat:end-->
+<!--文件上传模态框：begin-->
+<div class="modal fade upload-modal" id="upload-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><h3>上传文件</h3><a href="" class="close" data-dismiss="modal"><i class="iconfont icon-close"></i></a></div>
+            <div class="modal-body">
+                <div id="uploader" class="wu-example">
+                    <div class="queueList">
+                        <div id="dndArea" class="placeholder">
+                            <div id="filePicker" class="addfile-btn"></div>
+                            <h3>在这里上传文件</h3>
+                            <article>上传新文件或拖拽文件到框内</article>
+                            <p>可以直接拖拽文件至当前页面</p>
+                        </div>
+                    </div>
+                    <div class="statusBar" style="display: none;">
+                        <div class="imgWrap"><img data-doc="images/lib/docfile.png" data-pdf="images/lib/pdffile.png" src="" alt=""></div>
+                        <div class="exp">
+                            <header class="title"></header>
+                            <div class="progress">
+                                <!--<span class="text">0%</span>-->
+                                <span class="percentage"></span>
+                            </div>
+                            <div class="progress-txt"><span class="text pull-right">0%</span><span class="size">0</span> <span class="speed"></span></div>
+                            <div class="info"></div>
+                        </div>
+                        <div class="btns">
+                            <a class="cancel" href=""></a>
+                            <!--<div id="filePicker2"></div>-->
+                            <!--<div class="uploadBtn">开始上传</div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-brand upload-confirm">开始上传</a>
+                <a href="" class="btn btn-grey upload-cancel">取消上传</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--文件上传模态框：end-->
+<!--预览模态框：begin-->
+<div class="modal fade scan-modal" id="filescan-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close" data-dismiss="modal">&times;</div>
+            <iframe src="" data-addr="pdf/web/viewer.html?file=../../" id="preview-frame" frameborder="0" width="100%" height="100%" allowfullscreen webkitallowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+<!--预览模态框：end-->
+<!--form表单提示框：begin-->
+<div class="modal fade form-modal-tip" id="form-tips-modal" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content text-center">
+            <img src="images/lib/formalert.png" alt="">
+            <p>加 * 为必填</p>
+        </div>
+    </div>
+</div>
+<!--form表单提示框：end-->
+<!--页尾：begin-->
+<footer class="pg-footer abs">
+    <div class="container">
+        <div class="ft-box clearfix">
+            <div class="ft-other pull-left">
+                <header><img src="images/lib/ftlogo.png" alt=""><span>行政人在此凝聚</span></header>
+                <div class="site">
+                    <p>客服邮箱：service@izxxz.com</p>
+                    <p>小编微信：xingzhengclub</p>
+                </div>
+            </div>
+            <div class="ft-nav pull-left">
+                <ul>
+                    <li><a href="about.html">关于我们</a></li>
+                    <li><a href="about.html">联系我们</a></li>
+                    <li><a href="join.html">加入我们</a></li>
+                </ul>
+            </div>
+            <div class="wechat pull-right">
+                <img src="images/upload/wechat.jpg" alt="">
+                <p>扫码关注<br>“知行club”公众号</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="web-info">备案号：京391095819086-1049-016</div>
+    </div>
+</footer>
+<!--页尾撑起-->
+<div class="pad-footer"></div>
+<!--页尾：end-->
+<!--脚本：begin-->
+<script src="js/lib/jquery.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/lib/lazyLoad.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/lib/webuploader.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/app/lib.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/app/paper.js" charset="UTF-8" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" charset="UTF-8" src="js/lib/flexible.js"></script>
+    <title>Title</title>
+    <link href="css/base.css" rel="stylesheet">
+    <!-- [if lt IE 9]>
+    <script src="js/lib/html5shiv.min.js"></script>
+    <script src="js/lib/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="grey-bg">
+<!--头部：begin-->
+<nav class="pg-header fixed">
+    <div class="container">
+        <a class="brand pull-left" href="index.html"><img src="images/lib/logo.png" alt=""></a>
+        <a href="#nav-modal" class="menu-btn pull-right" data-toggle="modal"></a>
+        <a href="javascript:void(0);" class="search-btn pull-right"></a>
+    </div>
+</nav>
+<div class="search-fixed">
+    <form onsubmit="return false;">
+        <div class="form-group">
+            <span class="search-btn"></span>
+            <input class="form-control" id="keyword-input" type="search" placeholder="输入你要搜索的内容">
+            <a class="cancel-btn" href="javascript:void(0);">取消</a>
+        </div>
+    </form>
+</div>
+<!--头部撑起-->
+<div class="pad-header"></div>
+<!--头部：end-->
+<!--主题部分：begin-->
+<section class="pg-section mt-em">
+    <div class="container">
+        <header class="common-header"><span class="title rounded">知行大咖说</span></header>
+        <ul class="shot-list mt-10">
+            <li>
+                <a href="detail.html">
+                    <div class="img"><img class="lazy-img" data-original="images/upload/shot01.jpg" alt="">
+                    </div>
+                    <div class="exp">
+                        <h2>赵子侃</h2>
+                        <h3>楼小易创始人兼CEO</h3>
+                        <div class="line"></div>
+                        <article>
+                            说行政是一个被低估的岗位，一点都不为过。尤其在互联网时代......
+                        </article>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="detail.html">
+                    <div class="img"><img class="lazy-img" data-original="images/upload/shot02.jpg" alt="">
+                    </div>
+                    <div class="exp">
+                        <h2>赵子侃</h2>
+                        <h3>楼小易创始人兼CEO</h3>
+                        <div class="line"></div>
+                        <article>
+                            说行政是一个被低估的岗位，一点都不为过。尤其在互联网时代......
+                        </article>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="detail.html">
+                    <div class="img"><img class="lazy-img" data-original="images/upload/shot03.jpg" alt="">
+                    </div>
+                    <div class="exp">
+                        <h2>赵子侃</h2>
+                        <h3>楼小易创始人兼CEO</h3>
+                        <div class="line"></div>
+                        <article>
+                            说行政是一个被低估的岗位，一点都不为过。尤其在互联网时代......
+                        </article>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <!--分割线-->
+        <div class="divider-line grey mt-em"></div>
+        <!--投稿：begin-->
+        <div class="hot-new mt-10">
+            <article>
+                <p>如果你有想爆料的内容或想要分享的经验请告诉我们</p>
+            </article>
+            <a class="btn btn-brand" href="paper.html">投稿·爆料</a>
+        </div>
+        <!--投稿：end-->
+    </div>
+</section>
+<!--主题部分：end-->
+<!--fixed wechat:begin-->
+<a class="share-btn fixed"></a>
+<!--fixed wechat:end-->
+<!--搜索模态框：begin-->
+<div class="modal fade search-modal" id="search-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--<form>-->
+            <div class="form-group">
+                <a class="search-btn" href="javascript:void(0);"><i class="iconfont icon-search-light"></i></a>
+                <input class="form-control" type="text">
+                <a class="cancel-btn" href="" data-dismiss="modal">取消</a>
+            </div>
+            <!--</form>-->
+        </div>
+    </div>
+</div>
+<!--搜索模态框：end-->
+<!--导航模态框：begin-->
+<div class="modal fade nav-modal" id="nav-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="logo"><img src="images/lib/whitelogo.png" alt=""></div>
+            <ul class="navbar">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="skill.html">行政秘籍</a></li>
+                <li class="active"><a href="talk.html">知行大咖说</a></li>
+                <li><a href="activity.html">活动</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="hot.html">我要爆料</a></li>
+                <li><a href="paper.html">投稿内容</a></li>
+            </ul>
+            <a href="" class="close-modal" data-dismiss="modal"><i class="iconfont icon-close"></i></a>
+        </div>
+    </div>
+</div>
+<!--导航模态框：end-->
+<!--页尾：begin-->
+<footer class="pg-footer abs">
+    <div class="container">
+        <div class="ft-box clearfix">
+            <div class="ft-other pull-left">
+                <div class="logo"><img src="images/lib/ftlogo.png" alt=""></div>
+                <div class="line"></div>
+                <h2>行政人在此凝聚</h2>
+            </div>
+            <div class="site pull-right">
+                <p>客服邮箱：service@izxxz.com</p>
+                <p>小编微信：xingzhengclub</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="web-info">备案号：京391095819086-1049-016</div>
+    </div>
+</footer>
+<!--页尾撑起-->
+<div class="pad-footer"></div>
+<!--页尾：end-->
+<!--脚本：begin-->
+<script src="js/lib/jquery.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/lib/lazyLoad.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/app/lib.js" charset="UTF-8" type="text/javascript"></script>
+<!--脚本：end-->
+</body>
+</html>
