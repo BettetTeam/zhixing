@@ -1,0 +1,134 @@
+@charset "UTF-8";
+//@import "variables";
+.boxSize(@size:border-box){
+    -webkit-box-sizing: @size;
+    -moz-box-sizing: @size;
+    box-sizing: @size;
+}
+.pa{
+    position: absolute;
+}
+.pr{
+    position: relative;
+}
+.pf{
+    position: fixed;
+}
+.backgroundCover(){
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+//border-radius
+.border-radius(@radiusPx:3px){
+    -webkit-border-radius: @radiusPx;
+    -moz-border-radius: @radiusPx;
+    border-radius: @radiusPx;
+}
+//transition
+.transition(@property:all,@duration:.3s,@delay:0s,@time-function:ease){
+    -webkit-transition: @property @duration @delay @time-function;
+    -moz-transition: @property @duration @delay @time-function;
+    transition: @property @duration @delay @time-function;
+}
+//box-shadow:
+.box-shadow(@x-shadow,@y-shadow,@blur,@shadow-color){
+    -webkit-box-shadow: @x-shadow @y-shadow @blur @shadow-color;
+    -moz-box-shadow: @x-shadow @y-shadow @blur @shadow-color;
+    box-shadow: @x-shadow @y-shadow @blur @shadow-color;
+}
+//animation:
+.animation(@ani-name,@ani-duration,@ani-delay:0s,@ani-time-function:ease){
+    -webkit-animation: @ani-name @ani-duration  @ani-time-function @ani-delay;
+    -moz-animation: @ani-name @ani-duration @ani-time-function  @ani-delay;
+    -o-animation: @ani-name @ani-duration  @ani-time-function @ani-delay;
+}
+//reset-text
+.reset-text() {
+    font-family: @font-family-base;
+    // We deliberately do NOT reset font-size.
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-break: auto;
+    text-align: left; // Fallback for where `start` is not supported
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    white-space: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+}
+//text-overflow
+.text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+//width+height
+.size(@width:100%,@height:100%){
+    width: @width;
+    height:@height;
+}
+//background-size
+.background-size(@width,@height){
+    /*Mozilla*/
+    -moz-background-size:@width @height;
+    /*Webkit*/
+    -webkit-background-size:@width @height;
+    /*Oprea*/
+    -o-background-size: @width @height;
+    /*W3c��׼*/
+    background-size:@width @height;
+}
+.flex(){
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.column-flex(){
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.column-reverse-flex(){
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+.flex-wrap(@wrap : wrap){
+    -webkit-flex-wrap: @wrap;
+    -ms-flex-wrap: @wrap;
+    flex-wrap: @wrap;
+}
+.justify-content-center(){
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.justify-content-around (){
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+.justify-content-between(){
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.flex-basis(@num){
+    -webkit-flex-basis: @num;
+    -ms-flex-preferred-size:@num;
+    flex-basis: @num;
+}

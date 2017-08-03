@@ -1,0 +1,10 @@
+@charset "UTF-8";
+.pa {
+  position: absolute;
+}
+.pr {
+  position: relative;
+}
+.pf {
+  position: fixed;
+}
