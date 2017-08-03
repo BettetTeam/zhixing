@@ -26,20 +26,24 @@ $(function () {
         var phone = $('[name="phone"]');
         var wechat = $('[name="wechat"]');
         var firstName = $('[name="firstName"]');
-        if(_email[0].checked == false){
-            $tipModal.modal('show').find('p').text('请选择投稿邮箱');
+        if(_email[0].checked == false && $.trim(_link.val()) == ""){
+            $tipModal.modal('show').find('p').text('邮箱或者文章链接必须填写其中一个！');
             return $(this);
         }
-        if($.trim(_link.val()) == ""){
-            $tipModal.modal('show').find('p').text('加 * 为必填');
+        if($.trim(firstName.val()) == ""){
+            $tipModal.modal('show').find('p').text('姓名不能为空！');
             return $(this);
         }
-        if ($.trim(firstName.val()) == "" && $.trim(phone.val()) == "" && $.trim(wechat.val()) == "") {
-            $tipModal.modal('show').find('p').text('姓名、手机号、微信号不能同时为空！');
+        if ($.trim(phone.val()) == "") {
+            $tipModal.modal('show').find('p').text('手机号码不能为空！');
             return $(this);
         }
         if($.trim(phone.val()) != ""&&!(/^1(3|4|5|7|8)\d{9}$/.test(phone.val()))){
             $tipModal.modal('show').find('p').text('手机号码有误，请重填');
+            return $(this);
+        }
+        if ($.trim(wechat.val()) == "") {
+            $tipModal.modal('show').find('p').text('微信号不能为空！');
             return $(this);
         }
         var AjaxURL= "../OrderManagement/AjaxModifyOrderService.aspx";

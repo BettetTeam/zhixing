@@ -561,48 +561,6 @@ mark:hover,
 .pg-header .brand img {
   height: 30px;
 }
-.pg-header .search-group.brand .submit-btn .icon-search-light {
-  color: #be1b20;
-}
-.pg-header .search-group.brand input {
-  border-color: #be1b20;
-}
-.pg-header .search-group {
-  position: relative;
-  margin-top: 6px;
-}
-.pg-header .search-group input {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 260px;
-  padding-left: 30px;
-  padding-right: 30px;
-  border-bottom: 1px solid #d9d9d9;
-  line-height: 22px;
-  height: 22px;
-}
-.pg-header .search-group .submit-btn {
-  position: absolute;
-  left: 0;
-  top: 1px;
-  color: #000;
-}
-.pg-header .search-group .submit-btn .icon-search-light {
-  font-size: 18px;
-}
-.pg-header .search-group .clear-btn {
-  position: absolute;
-  right: 0;
-  bottom: 1px;
-  background-color: #fff;
-  width: 22px;
-  height: 22px;
-  text-align: right;
-}
-.pg-header .search-group .icon-close {
-  vertical-align: -3px;
-}
 .pg-header .searchbar.expanded input {
   width: 260px;
   border-bottom-color: #be1b20;
@@ -612,6 +570,9 @@ mark:hover,
   right: 100%;
   margin-right: -17px;
   background-position: 0 -17px;
+}
+.pg-header .searchbar.expanded .submit-btn:after {
+  opacity: 1;
 }
 .pg-header .searchbar.expanded .clear-btn {
   opacity: 1;
@@ -642,7 +603,28 @@ mark:hover,
   top: 50%;
   margin-top: -10px;
   color: #000;
-  background: url('../images/lib/search.png') no-repeat 0 0;
+  background: url('../images/lib/search.png') no-repeat center;
+  /*Mozilla*/
+  -moz-background-size: 100% 100%;
+  /*Webkit*/
+  -webkit-background-size: 100% 100%;
+  /*Oprea*/
+  -o-background-size: 100% 100%;
+  /*W3c��׼*/
+  background-size: 100% 100%;
+}
+.pg-header .searchbar .submit-btn:after {
+  opacity: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/lib/searchbrand.png') no-repeat center;
+  -webkit-background-size: contain;
+  background-size: contain;
 }
 .pg-header .searchbar .submit-btn .icon-search-light {
   font-size: 18px;
@@ -653,9 +635,11 @@ mark:hover,
   right: 0;
   top: 50%;
   margin-top: -10px;
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   background: url('../images/lib/searchclear.png') no-repeat center;
+  -webkit-background-size: contain;
+  background-size: contain;
 }
 .pg-header .hot-link {
   margin-right: 40px;
@@ -850,7 +834,7 @@ mark:hover,
   padding-bottom: 80px;
 }
 .pg-main {
-  width: 73.75%;
+  width: 71%;
 }
 .pg-aside {
   width: 23%;
@@ -975,7 +959,7 @@ mark:hover,
   background-size: 7px 21px;
 }
 .figure-list {
-  margin: 0 -15px;
+  margin: 0 0 0 -15px;
 }
 .figure-list li {
   padding: 12px 15px;
@@ -1293,9 +1277,10 @@ mark:hover,
   margin-top: 5px;
 }
 .txt-wrap > article {
-  margin-top: 40px;
+  margin-top: 32px;
   text-align: justify;
   font-size: 16px;
+  line-height: 2;
 }
 .txt-wrap > article img {
   max-width: 100%;
@@ -1356,7 +1341,6 @@ mark:hover,
   display: inline-block;
   width: 24px;
   height: 24px;
-  right: 20px;
   bottom: 12px;
   z-index: 10;
   /*Mozilla*/
@@ -1407,10 +1391,27 @@ mark:hover,
   padding: 10px 0 1em;
 }
 .hot-new .btn-brand {
-  font-size: 20px;
+  font-size: 16px;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
 }
 .hot-new .btn-brand a {
+  margin: 0 10px;
   color: #fff;
+  display: inline-block;
+  position: relative;
+}
+.hot-new .btn-brand a:last-child:after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  left: -11px;
+  top: 50%;
+  margin-top: -2px;
 }
 .mt-20 {
   margin-top: 20px;
@@ -1433,13 +1434,6 @@ mark:hover,
   text-align: center;
   padding: 20px 30px;
 }
-.shot-list li:hover .img:after {
-  width: 100%;
-  height: 100%;
-}
-.shot-list li:hover .mark {
-  opacity: 1;
-}
 .shot-list li:hover .line {
   width: 90px;
   background-color: #be1b20;
@@ -1451,6 +1445,13 @@ mark:hover,
   height: 155px;
   margin-left: auto;
   margin-right: auto;
+}
+.shot-list .img:hover:after {
+  width: 100%;
+  height: 100%;
+}
+.shot-list .img:hover .mark {
+  opacity: 1;
 }
 .shot-list .img img {
   display: block;
@@ -1529,9 +1530,6 @@ mark:hover,
   color: #666;
   line-height: 22px;
 }
-.activity-list {
-  margin-right: 6%;
-}
 .activity-list li {
   position: relative;
   -webkit-border-radius: 10px;
@@ -1571,7 +1569,7 @@ mark:hover,
 .activity-list .img:before {
   content: "";
   display: block;
-  padding-top: 77.7%;
+  padding-top: 56.45%;
 }
 .activity-list .img img {
   position: absolute;
@@ -1581,33 +1579,44 @@ mark:hover,
   height: 100%;
 }
 .activity-list .exp {
-  margin-left: 47.2%;
+  margin-left: 370px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   padding: 15px 20px;
   color: #666;
 }
 .activity-list header {
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: normal;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .activity-list article {
-  font-size: 16px;
   line-height: 1.7;
   max-height: 3.4em;
   overflow: hidden;
   margin-top: 1em;
 }
 .activity-list .meta {
-  margin-top: 28px;
-  font-size: 16px;
+  margin-top: 35px;
+  color: #333;
   line-height: 2;
 }
 .activity-list .meta .iconfont {
   font-size: 18px;
   margin-right: 10px;
 }
+.activity-list .meta .date,
+.activity-list .meta .site {
+  display: inline-block;
+}
+.activity-list .meta .site {
+  margin-left: 2em;
+}
 .activity-list .hot-words {
+  font-size: 12px;
   position: absolute;
   bottom: 15px;
   left: 385px;
@@ -1679,6 +1688,7 @@ mark:hover,
   left: 30px;
   line-height: 1;
   top: 18px;
+  height: 14px;
   color: #000;
 }
 .hot-form .form-group .label.abs:after {
@@ -1714,6 +1724,7 @@ mark:hover,
 .hot-form .form-control {
   position: relative;
   padding-left: 145px;
+  line-height: 1.4286;
   border: none;
 }
 .hot-form .form-control.textarea-hot {
@@ -1736,7 +1747,7 @@ mark:hover,
   margin-top: -10px;
 }
 .hot-form .file-control {
-  height: 55px;
+  height: 48px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1919,7 +1930,17 @@ iframe {
   padding: 30px;
 }
 .upload-modal .modal-footer {
+  display: none;
   padding-top: 0;
+}
+.upload-modal .modal-footer .btn {
+  padding: .5em 1.8em;
+}
+.upload-modal #uploader .placeholder {
+  padding: 55px 40px;
+}
+.upload-modal #uploader .placeholder h3 {
+  margin-top: 30px;
 }
 #uploader .filelist {
   display: none !important;

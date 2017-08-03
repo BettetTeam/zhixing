@@ -60,7 +60,7 @@ $(function () {
         var fileName = $(this).attr('href');
         var $self = $(this);
         //debugger;
-        console.log(fileName);
+        //console.log(fileName);
         deleteFile(fileName, function (flag) {
             if (flag) {
                 $self.closest('li').remove();
@@ -82,7 +82,7 @@ $(function () {
             label: '',
             multiple: false
         },
-        //auto: true,// {Boolean} [可选] [默认值：false] 设置为 true 后，不需要手动调用上传，有文件选择即开始上传。
+        auto: true,// {Boolean} [可选] [默认值：false] 设置为 true 后，不需要手动调用上传，有文件选择即开始上传。
         dnd: '#uploader .queueList', //拖拽上传容器
         paste: document.body,//指定监听paste事件的容器，如果不指定，不启用此功能。此功能为通过粘贴来添加截屏的图片。建议设置为document.body.
         accept: { //指定接受哪些类型的文件
@@ -101,7 +101,8 @@ $(function () {
     function resetState() {
         $('#uploader').find('.placeholder').removeClass('queued');
         $uploadBtn.data('state', 'pedding');
-        $uploadBtn.text('开始上传');
+        //$uploadBtn.text('开始上传');
+        upLoadModal.find('.modal-footer').hide();
         $statusBar.hide().find('.title').text("");
         $progress.hide().find('.percentage').css({width: 0});
         $progressTxt.hide().find('.size').text(0).siblings('.text').text(0 + "%");
@@ -174,6 +175,7 @@ $(function () {
         } else if (/(pdf)/.test(file.ext)) {
             _class = pdficon;
         }
+        upLoadModal.find('.modal-footer').show();
         $uploadBtn.data('state', 'ready');
         $statusBar.find('.imgWrap img').attr('src',_class);
         $statusBar.show().find('.title').text(file.name);//文件名
@@ -191,7 +193,7 @@ $(function () {
     uploader.on('uploadError', function (file, reason) {
         //file {File}File对象
         //reason {String}出错的code
-        $uploadBtn.data('state', 'error').text('重新上传');
+        $uploadBtn.data('state', 'error');
         $progress.hide().find('.percentage').css('width', 0);
         $progressTxt.hide().find('.text').text(0 + '%');
         $info.html('上传失败，请<a class="retry" href="#">重试</a>').show();
@@ -200,7 +202,7 @@ $(function () {
     uploader.on('uploadSuccess', function (file, response) {
         //file {File}File对象
         //response {Object}服务端返回的数据
-        $uploadBtn.data('state', 'success').text('确定');
+        $uploadBtn.data('state', 'success');
         $progress.hide().find('.percentage').css('width', '100%');
         $progressTxt.hide().find('.text').text(100 + "%");
         $info.html('文件上传成功！').show();
@@ -216,27 +218,27 @@ $(function () {
         var _state = $uploadBtn.data('state');
         switch (_state) {
             case "pedding":
-                $tipModal.modal('show').find('p').text('您还没有选择文件，请选择文件。');
+                //$tipModal.modal('show').find('p').text('您还没有选择文件，请选择文件。');
                 //alert('请选择上传文件');
                 break;
             case "ready":
-                uploader.upload();
-                $uploadBtn.data('state', 'loading').text('上传中...');
+                //uploader.upload();
+                $uploadBtn.data('state', 'loading');
                 break;
             case "loading":
                 //alert('文件正在上传中...');
                 break;
             case "error":
-                uploader.retry();
+                //uploader.retry();
                 $progress.show().find('.percentage').css({width: 0});
                 $progressTxt.show().find('.text').text(0 + "%");
                 $info.hide().html("");
-                $uploadBtn.data('state', 'loading').text('上传中...');
+                //$uploadBtn.data('state', 'loading').text('上传中...');
                 break;
             case "success":
-                upLoadModal.modal('hide');
                 break;
         }
+        upLoadModal.modal('hide');
     });
     //取消按钮点击
     upLoadModal.on('click', '.upload-cancel', function (e) {
@@ -268,7 +270,7 @@ $(function () {
         $progress.show().find('.percentage').css({width: 0});
         $progressTxt.show().find('.text').text(0 + "%");
         $info.hide().html("");
-        $uploadBtn.data('state', 'loading').text('上传中...')
+        $uploadBtn.data('state', 'loading')
     });
 
     //文件上传中的删除按钮点击
@@ -341,8 +343,8 @@ $(function () {
         var tel = $('[name="tel"]');
         var wx = $('[name="wx"]');
         var username = $('[name="username"]');
-        if (!_fileLen) {
-            $tipModal.modal('show').find('p').text('请选择上传文件！');
+        if (!_fileLen && $.trim(newsLink.val()) == "") {
+            $tipModal.modal('show').find('p').text('请选择上传文件或者添加文章链接！');
             return false;
         } else if (_fileLen > 1) {
             $tipModal.modal('show').find('p').text('每次只能上传一个文件！');
@@ -358,16 +360,20 @@ $(function () {
             });
             $('#fileinput').val(_vals);
         }
-        if ($.trim(newsLink.val()) == "") {
-            $tipModal.modal('show').find('p').text('文章连接不能为空！');
+        if ($.trim(username.val()) == "") {
+            $tipModal.modal('show').find('p').text('姓名不能为空！');
             return $(this);
         }
-        if ($.trim(username.val()) == "" && $.trim(tel.val()) == "" && $.trim(wx.val()) == "") {
-            $tipModal.modal('show').find('p').text('姓名、手机号、微信号不能同时为空！');
+        if ($.trim(tel.val()) == "") {
+            $tipModal.modal('show').find('p').text('手机号不能为空！');
             return $(this);
         }
         if ($.trim(tel.val()) != "" && !(/^1(3|4|5|7|8)\d{9}$/.test(tel.val()))) {
             $tipModal.modal('show').find('p').text('手机号码有误，请重填');
+            return $(this);
+        }
+        if ($.trim(tel.val()) == "") {
+            $tipModal.modal('show').find('p').text('微信号不能为空！');
             return $(this);
         }
         var AjaxURL = "/contribution";

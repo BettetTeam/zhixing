@@ -426,9 +426,6 @@ body {
   border: 1px solid #a9a9a9;
   display: block;
 }
-.form-text {
-  padding: 0.8em 0;
-}
 .form-group.brand .form-control {
   border-color: #be1b20;
 }
@@ -1232,6 +1229,16 @@ body {
   color: #000;
   line-height: 1.7;
 }
+.hot-new .btn.btn-brand {
+  padding: .5em 1em;
+  -webkit-border-radius: 1.214em;
+  -moz-border-radius: 1.214em;
+  border-radius: 1.214em;
+}
+.hot-new .btn.btn-brand a {
+  color: #fff;
+  margin: 10px;
+}
 .mt-10 {
   margin-top: 10px;
 }
@@ -1321,9 +1328,9 @@ body {
   color: #666;
 }
 .activity-list li {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-border-radius: 0.2rem;
+  -moz-border-radius: 0.2rem;
+  border-radius: 0.2rem;
   background-color: #fff;
   -webkit-box-shadow: 0 0 0 rgba(150, 150, 150, 0);
   -moz-box-shadow: 0 0 0 rgba(150, 150, 150, 0);
@@ -1356,9 +1363,6 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 0.15rem 0.15rem 0 0;
-  -webkit-border-radius: 0.2rem;
-  -moz-border-radius: 0.2rem;
-  border-radius: 0.2rem;
 }
 .activity-list .img-mark {
   font-size: 0.32rem;
@@ -1370,7 +1374,7 @@ body {
   left: 10px;
 }
 .activity-list .exp {
-  padding: 0.26rem 0.346rem;
+  padding: 0.46rem 0.346rem;
 }
 .activity-list header {
   font-size: 0.42666rem;
@@ -1378,11 +1382,11 @@ body {
 .activity-list article {
   font-size: 0.373rem;
   line-height: 1.5;
-  margin-top: 5px;
+  margin-top: 0.7em;
   color: #666;
 }
 .activity-list .meta {
-  margin-top: 0.5em;
+  margin-top: 0.8em;
   line-height: 2;
   font-size: 0.346rem;
 }
@@ -1395,7 +1399,7 @@ body {
 }
 .activity-list .hot-words {
   color: #666;
-  margin-top: 0.5em;
+  margin-top: 0.8em;
 }
 .activity-list .hot-words .txt-labels {
   font-size: 0.346rem;
@@ -1465,7 +1469,7 @@ body {
 }
 .hot-form .form-header {
   font-size: 0.35rem;
-  margin-top: 1em;
+  margin: 1em 0 .2em;
 }
 .hot-form .form-control,
 .hot-form .form-text {
@@ -1604,7 +1608,7 @@ body {
 .about-wrap {
   text-align: justify;
   font-size: 0.373rem;
-  line-height: 1.5;
+  line-height: 2;
 }
 .about-wrap img {
   max-width: 100%;
@@ -1623,7 +1627,7 @@ body {
   margin-top: 1em;
   font-size: 0.373rem;
   text-align: justify;
-  line-height: 1.5;
+  line-height: 2;
 }
 .join-wrap .join-item section img {
   max-width: 100%;
@@ -1638,7 +1642,7 @@ body {
   margin-top: 1em;
   font-size: 0.373rem;
   text-align: justify;
-  line-height: 1.5;
+  line-height: 2;
 }
 .contact-wrap .contact-item section img {
   max-width: 100%;
@@ -1737,4 +1741,40 @@ mark:hover,
   font-size: 15px;
   color: #be1b20;
   margin-top: 0.6em;
+}
+.tjh-wrap {
+  padding: 90px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tjh-wrap > img {
+  width: 60px;
+}
+.tjh-wrap h3 {
+  font-size: 18px;
+  font-weight: normal;
+  color: #be1b20;
+  margin-top: 1em;
+}
+.tjh-wrap p {
+  font-size: 16px;
+  color: #666;
+  margin-top: 1em;
+}
+.tjh-wrap .btn {
+  margin-top: 2.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  color: #999;
+  border: 1px solid #999;
+  -webkit-border-radius: 1.12em;
+  -moz-border-radius: 1.12em;
+  border-radius: 1.12em;
+}
+.tjh-wrap .btn:hover {
+  border-color: #be1b20;
+  color: #be1b20;
+}
+.tjh-wrap .btn + .btn {
+  margin-left: 20px;
 }
